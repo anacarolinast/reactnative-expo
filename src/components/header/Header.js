@@ -1,5 +1,3 @@
-// Header.js
-
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import styles from "../../styles/styles";
@@ -50,11 +48,9 @@ const Header = ({ location }) => {
             <HiOutlineLocationMarker style={{ color: "white" }} size={24} />
           </View>
         )}
-        <TouchableOpacity onPress={handleNavigateToNextDays}>
-          <Text style={styles.textH2}>
-            {route.name === "Search" ? "Pesquisar cidade" : location}
-          </Text>
-        </TouchableOpacity>
+        <Text style={{ ...styles.textH2, textAlign: "center" }}>
+          {route.name === "Search" ? "Pesquisar cidade" : location}
+        </Text>
       </View>
       <HiOutlineBell style={{ color: "white" }} size={24} />
     </View>

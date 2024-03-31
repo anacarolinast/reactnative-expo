@@ -9,7 +9,7 @@ app.use(cors());
 
 app.get('/weather', async (req, res) => {
    try {
-       const response = await axios.get(`https://api.hgbrasil.com/weather?key=144bde8c&lat=-8.11208&lon=-35.0154&user_ip=remote`);
+       const response = await axios.get(`https://api.hgbrasil.com/weather?key=40deeaf2&lat=-8.11208&lon=-35.0154&user_ip=remote`);
        res.json(response.data);
    } catch (error) {
        res.status(500).json({ error: 'Erro ao obter dados meteorológicos.' });
@@ -30,7 +30,7 @@ app.get('/weather/cities', async (req, res) => {
 
         const weatherDataPromises = randomCities.map(city => {
             console.log(`Enviando requisição para a cidade: ${city}`);
-            return axios.get(`https://api.hgbrasil.com/weather?key=144bde8c&city_name=${city}`);
+            return axios.get(`https://api.hgbrasil.com/weather?key=40deeaf2&city_name=${city}`);
         });
 
         const responses = await Promise.all(weatherDataPromises);
@@ -52,7 +52,7 @@ app.get('/weather/cities', async (req, res) => {
                 return res.status(400).json({ error: 'Nome da cidade não especificado na consulta' });
             }
     
-            const response = await axios.get(`https://api.hgbrasil.com/weather?key=144bde8c&city_name=${cityName}`);
+            const response = await axios.get(`https://api.hgbrasil.com/weather?key=40deeaf2&city_name=${cityName}`);
             res.json(response.data);
         } catch (error) {
             res.status(500).json({ error: 'Erro ao obter dados meteorológicos.' });

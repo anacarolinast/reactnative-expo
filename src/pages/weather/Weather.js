@@ -89,7 +89,7 @@ const Weather = () => {
     <View style={styles.container}>
       {windowWidth >= 768 ? (
         <View style={styles.formContainer}>
-          <Header location={cityWeatherData?.results.city} />
+          <Header location={cityWeatherData?.results.city_name} />
           <Text style={styles.textH1}>
             {cityWeatherData?.results.description}
           </Text>

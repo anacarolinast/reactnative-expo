@@ -52,7 +52,7 @@ const NextDays = () => {
             colors={["rgba(0,0,255,0.8)", "rgba(0,0,255,0.3)"]}
             style={styles.background}
           />
-          <Header location={weatherData?.results.city} />
+          <Header location={weatherData?.results.city_name} />
           {loading ? (
             <Text style={styles.textH1}>Carregando...</Text>
           ) : (

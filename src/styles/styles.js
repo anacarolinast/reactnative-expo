@@ -61,6 +61,37 @@ const styles = StyleSheet.create({
     marginBottom: "4%",
     alignItems: "center"
   },
+  inputContainer: {
+    width: "85%",
+    marginBottom: 8,
+    borderColor: "#A544E6",
+  },
+  input: {
+    borderColor: "#A544E6",
+    borderWidth: 3,
+    borderRadius: 8,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
+    color: "white",
+    placeholderTextColor: "white",
+    height: 36,
+  },
+  buttonContainer: {
+    marginTop: 16,
+    width: "80%",
+    borderRadius: 8,
+  },
+  firstButton: {
+    backgroundColor: "#6907F2",
+    borderWidth: 0,
+  },
+  secondButton: {
+    backgroundColor: "#A544E6",
+    borderWidth: 0,
+  },
+  buttonText: {
+    color: "white",
+  },
 });
 
 export default styles;
