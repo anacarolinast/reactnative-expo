@@ -49,7 +49,7 @@ app.get('/weather/cities', async (req, res) => {
         try {
             const { cityName } = req.query;
             if (!cityName) {
-                return res.status(400).json({ error: 'Nome da cidade não especificado na consulta.' });
+                return res.status(400).json({ error: 'Nome da cidade não especificado na consulta' });
             }
     
             const response = await axios.get(`https://api.hgbrasil.com/weather?key=144bde8c&city_name=${cityName}`);
