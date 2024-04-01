@@ -15,7 +15,6 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import CityCard from "../../components/card/cityCard/CityCard";
 import fetchCitiesWeatherData from "../../../api/fetchCitiesWeatherData";
 import fetchCityWeatherData from "../../../api/fetchCityWeatherData";
-import { useNavigation } from "@react-navigation/native";
 
 const Search = () => {
   const windowWidth = useWindowDimensions().width;

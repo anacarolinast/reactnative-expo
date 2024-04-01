@@ -4,29 +4,24 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Weather from "./src/pages/weather/Weather";
 import NextDays from "./src/pages/nextDays/NextDays";
 import Search from "./src/pages/search/Search";
-import Login from "./src/pages/login/Login";
+
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ headerShown: false }}
-        />
-      <Stack.Screen
+        <Stack.Screen
           name="Search"
           component={Search}
           options={{ headerShown: false }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="Weather"
           component={Weather}
           options={{ headerShown: false }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="NextDays"
           component={NextDays}
           options={{ headerShown: false }}

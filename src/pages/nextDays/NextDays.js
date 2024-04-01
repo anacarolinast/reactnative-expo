@@ -40,6 +40,21 @@ const NextDays = () => {
     fetchData();
   }, [route.params]);
 
+  const getBackgroundColors = (time) => {
+    if (weatherData && weatherData.results && time) {
+      const hour = parseInt(time.split(":")[0]);
+      if (hour >= 6 && hour < 12) {
+        return ["#FFE155", "#FFD242"];
+      } else if (hour >= 12 && hour < 18) {
+        return ["#55B3FF", "#42A1FF"];
+      } else {
+        return ["#202C7C", "#0D1440"];
+      }
+    } else {
+      return ["#202C7C", "#0D1440"];
+    }
+  };
+
   return (
     <View style={styles.container}>
       {windowWidth >= 768 ? (
@@ -49,12 +64,14 @@ const NextDays = () => {
       ) : (
         <>
           <LinearGradient
-            colors={["rgba(0,0,255,0.8)", "rgba(0,0,255,0.3)"]}
+            colors={getBackgroundColors(weatherData?.results?.time)}
             style={styles.background}
           />
           <Header location={weatherData?.results.city_name} />
           {loading ? (
-            <Text style={styles.textH1}>Carregando...</Text>
+            <View style={{ alignItems: "center", marginTop: 20 }}>
+              <Text style={styles.textH1}>Carregando...</Text>
+            </View>
           ) : (
             <>
               <LinearGradient
@@ -65,7 +82,6 @@ const NextDays = () => {
                   borderRadius: 8,
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "4%",
                 }}
               >
                 <View

@@ -17,7 +17,7 @@ const CityCard = ({ city_name, description, condition_slug, temp }) => {
   };
 
   const limitedCityName =
-    route.name === "Weather" ? city_name.substring(0, 8) + "..." : city_name;
+    route.name === "Weather" ? city_name.substring(0, 9) + "..." : city_name;
   const limitedDescription =
     route.name === "Weather"
       ? description.substring(0, 8) + "..."

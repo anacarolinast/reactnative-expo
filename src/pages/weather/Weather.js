@@ -73,6 +73,17 @@ const Weather = () => {
     fetchWeather();
   }, [route.params]);
 
+  const getBackgroundColors = (time) => {
+    const hour = parseInt(time.split(":")[0]);
+    if (hour >= 6 && hour < 12) {
+      return ["#FFE155", "#FFD242"];
+    } else if (hour >= 12 && hour < 18) {
+      return ["#55B3FF", "#42A1FF"];
+    } else {
+      return ["#202C7C", "#0D1440"];
+    }
+  };
+
   const handleNavigateToNextDays = (cityName) => {
     navigation.navigate("NextDays", { cityName });
   };
@@ -80,6 +91,7 @@ const Weather = () => {
   if (loading) {
     return (
       <View style={styles.container}>
+        <Header location={cityWeatherData?.results.city_name} />
         <Text style={styles.textH1}>Carregando...</Text>
       </View>
     );
@@ -121,7 +133,7 @@ const Weather = () => {
       ) : (
         <>
           <LinearGradient
-            colors={["rgba(0,0,255,0.8)", "rgba(0,0,255,0.3)"]}
+            colors={getBackgroundColors(cityWeatherData?.results.time)}
             style={styles.background}
           />
           <Header location={cityWeatherData?.results.city} />
